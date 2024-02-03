@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+
+{%block title%} Welcome To MyBlogs {%endblock%}
+
+
+{%block content%}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {%for p in posts%}
+            {{p.content | truncatewords:60 |safe}}
+            {%endfor%}
+            <div class="">
+                <button type="button" class="btn btn-success">Read More</button>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <img src="/media/{{p.image}}" class="responsive-img">
+        </div>
+
+    </div>
+
+</div>
+
+{%endblock%}
